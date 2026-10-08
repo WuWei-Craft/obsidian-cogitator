@@ -1,0 +1,895 @@
+/* ============================================================
+   COGITATOR
+   v0.1.2 — CONSOLIDATED
+   Obsidian 1.8.x / Default Theme
+   ============================================================ */
+
+
+/* ============================================================
+   PALETTE
+   ============================================================ */
+
+.theme-dark {
+
+    /* --------------------------------------------------------
+       Core surfaces
+       -------------------------------------------------------- */
+
+    --cog-bg-0: #080706;
+    --cog-bg-1: #0d0b09;
+    --cog-bg-2: #14110d;
+    --cog-bg-3: #1b1712;
+
+
+    /* --------------------------------------------------------
+       Borders
+       -------------------------------------------------------- */
+
+    --cog-border: #332d24;
+    --cog-border-bright: #4a4032;
+
+
+    /* --------------------------------------------------------
+       Text
+       -------------------------------------------------------- */
+
+    --cog-text: #c8bfa5;
+    --cog-text-muted: #817966;
+    --cog-text-faint: #5b554b;
+
+
+    /* --------------------------------------------------------
+       Accent
+       -------------------------------------------------------- */
+
+    --cog-brass: #a88a52;
+    --cog-brass-dark: #75613b;
+
+    --cog-metal-bright: #d6b86a;
+    --cog-link: #e0a33f;
+
+
+    /* --------------------------------------------------------
+       Machine colors
+       -------------------------------------------------------- */
+
+    --cog-red: #8f211c;
+    --cog-red-bright: #b73529;
+    --cog-amber: #c58b32;
+    --cog-green: #718b62;
+
+
+    /* --------------------------------------------------------
+       Obsidian core variables
+       -------------------------------------------------------- */
+
+    --background-primary: var(--cog-bg-1);
+    --background-primary-alt: var(--cog-bg-0);
+
+    --background-secondary: var(--cog-bg-2);
+    --background-secondary-alt: var(--cog-bg-3);
+
+    --background-modifier-border: var(--cog-border);
+    --background-modifier-border-hover: var(--cog-border-bright);
+
+    --background-modifier-hover: var(--cog-bg-3);
+
+    --text-normal: var(--cog-text);
+    --text-muted: var(--cog-text-muted);
+    --text-faint: var(--cog-text-faint);
+
+    --text-accent: var(--cog-brass);
+    --text-accent-hover: var(--cog-amber);
+
+    --interactive-accent: var(--cog-red);
+    --interactive-accent-hover: var(--cog-red-bright);
+
+    --scrollbar-thumb-bg: var(--cog-border);
+    --scrollbar-active-thumb-bg: var(--cog-border-bright);
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+.theme-dark {
+    --font-interface: "JetBrains Mono", "IBM Plex Mono", monospace;
+    --font-monospace: "JetBrains Mono", "IBM Plex Mono", monospace;
+    --font-text: "Alegreya", Georgia, serif;
+}
+
+
+/* ============================================================
+   WORKSPACE
+   ============================================================ */
+
+.theme-dark .workspace {
+    background: var(--cog-bg-0);
+}
+
+.theme-dark .mod-left-split,
+.theme-dark .mod-right-split {
+    background: var(--cog-bg-2);
+}
+
+.theme-dark .workspace-leaf,
+.theme-dark .workspace-leaf-content {
+    background: var(--cog-bg-1);
+}
+
+
+/* ============================================================
+   TAB BAR
+   ============================================================ */
+
+.theme-dark .workspace-tab-header-container {
+    background: var(--cog-bg-2);
+    border-bottom: 1px solid var(--cog-border);
+}
+
+.theme-dark .workspace-tab-header {
+    color: var(--cog-text-muted);
+}
+
+.theme-dark .workspace-tab-header.is-active {
+    color: var(--cog-brass);
+}
+
+
+/* ============================================================
+   FILE EXPLORER
+   ============================================================ */
+
+.theme-dark .nav-folder-title,
+.theme-dark .nav-file-title {
+    font-family: var(--font-monospace);
+}
+
+.theme-dark .nav-folder-title {
+    color: var(--cog-brass);
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.theme-dark .nav-file-title {
+    color: var(--cog-text-muted);
+}
+
+.theme-dark .nav-file-title:hover,
+.theme-dark .nav-folder-title:hover {
+    background: var(--cog-bg-3);
+}
+
+.theme-dark .nav-file-title.is-active {
+    color: var(--cog-brass);
+
+    background: var(--cog-bg-1);
+
+    border-left: 2px solid var(--cog-red);
+}
+
+
+/* ============================================================
+   MAIN EDITOR
+   ============================================================ */
+
+.theme-dark .markdown-source-view,
+.theme-dark .markdown-preview-view {
+    background: var(--cog-bg-1);
+}
+
+
+/* ============================================================
+   NOTE TITLE
+   Document identification plate
+   ============================================================ */
+
+.theme-dark .inline-title {
+    color: var(--cog-metal-bright) !important;
+
+    font-family: var(--font-interface) !important;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+
+    padding: 0.35em 0 0.45em;
+
+    border-bottom: 1px solid var(--cog-border-bright);
+
+    text-shadow:
+        0 0 8px rgba(214, 184, 106, 0.12);
+}
+
+.theme-dark .inline-title::before {
+    content: "+++ ";
+    color: var(--cog-red);
+}
+
+.theme-dark .inline-title::after {
+    content: " +++";
+    color: var(--cog-red);
+}
+
+
+/* ============================================================
+   DOCUMENT HIERARCHY
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   H1 — PRIMARY SECTION
+   ------------------------------------------------------------ */
+
+/* Live Preview */
+
+.theme-dark .cm-header-1 {
+    color: var(--cog-brass) !important;
+
+    font-family: var(--font-interface) !important;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.theme-dark .cm-header-1::before {
+    content: "[ ";
+    color: var(--cog-red);
+}
+
+.theme-dark .cm-header-1::after {
+    content: " ]";
+    color: var(--cog-red);
+}
+
+
+/* Reading View */
+
+.theme-dark .markdown-preview-view h1 {
+    color: var(--cog-brass);
+
+    font-family: var(--font-interface);
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.theme-dark .markdown-preview-view h1::before {
+    content: "[ ";
+    color: var(--cog-red);
+}
+
+.theme-dark .markdown-preview-view h1::after {
+    content: " ]";
+    color: var(--cog-red);
+}
+
+
+/* ------------------------------------------------------------
+   H2 — SECONDARY SECTION
+   ------------------------------------------------------------ */
+
+/* Live Preview */
+
+.theme-dark .cm-header-2 {
+    color: var(--cog-brass) !important;
+
+    font-family: var(--font-interface) !important;
+    font-weight: 500;
+
+    letter-spacing: 0.05em;
+}
+
+.theme-dark .cm-header-2::before {
+    content: "// ";
+    color: var(--cog-red);
+}
+
+
+/* Reading View */
+
+.theme-dark .markdown-preview-view h2 {
+    color: var(--cog-brass);
+
+    font-family: var(--font-interface);
+    font-weight: 500;
+
+    letter-spacing: 0.05em;
+}
+
+.theme-dark .markdown-preview-view h2::before {
+    content: "// ";
+    color: var(--cog-red);
+}
+
+
+/* ------------------------------------------------------------
+   H3 — DETAIL SECTION
+   ------------------------------------------------------------ */
+
+/* Live Preview */
+
+.theme-dark .cm-header-3 {
+    color: var(--cog-text) !important;
+
+    font-family: var(--font-interface) !important;
+    font-weight: 500;
+
+    letter-spacing: 0.03em;
+}
+
+.theme-dark .cm-header-3::before {
+    content: "▌ ";
+    color: var(--cog-brass-dark);
+}
+
+
+/* Reading View */
+
+.theme-dark .markdown-preview-view h3 {
+    color: var(--cog-text);
+
+    font-family: var(--font-interface);
+    font-weight: 500;
+
+    letter-spacing: 0.03em;
+}
+
+.theme-dark .markdown-preview-view h3::before {
+    content: "▌ ";
+    color: var(--cog-brass-dark);
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+/* Reading View */
+
+.theme-dark .markdown-preview-view a {
+    color: var(--cog-amber);
+
+    text-decoration: none;
+    border-bottom: 1px solid var(--cog-amber);
+
+    transition:
+        color 120ms ease,
+        border-color 120ms ease;
+}
+
+.theme-dark .markdown-preview-view a:hover {
+    color: var(--cog-link);
+    border-bottom-color: var(--cog-link);
+}
+
+
+/* Live Preview */
+
+.theme-dark .cm-hmd-internal-link {
+    color: var(--cog-amber);
+
+    text-decoration: none;
+    border-bottom: 1px solid var(--cog-amber);
+
+    transition:
+        color 120ms ease,
+        border-color 120ms ease;
+}
+
+.theme-dark .cm-hmd-internal-link:hover {
+    color: var(--cog-link);
+    border-bottom-color: var(--cog-link);
+}
+
+
+/* ============================================================
+   CODE
+   ============================================================ */
+
+.theme-dark .markdown-preview-view pre {
+    background: var(--cog-bg-0);
+
+    border: 1px solid var(--cog-border);
+    border-left: 3px solid var(--cog-red);
+}
+
+.theme-dark .markdown-preview-view code {
+    background: var(--cog-bg-2);
+    color: var(--cog-amber);
+
+    border: 1px solid var(--cog-border);
+
+    font-family: var(--font-monospace);
+}
+
+
+/* ============================================================
+   BLOCKQUOTE
+   ============================================================ */
+
+.theme-dark .markdown-preview-view blockquote {
+    background: var(--cog-bg-2);
+
+    border-left: 3px solid var(--cog-brass);
+
+    color: var(--cog-text-muted);
+}
+
+
+/* ============================================================
+   HORIZONTAL RULE
+   ============================================================ */
+
+.theme-dark .markdown-preview-view hr {
+    border: none;
+    border-top: 1px solid var(--cog-border);
+}
+
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+.theme-dark ::-webkit-scrollbar-thumb {
+    background: var(--cog-border);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--cog-border-bright);
+}
+
+
+/* ============================================================
+   BODY TEXT
+   ============================================================ */
+
+.theme-dark .markdown-preview-view p {
+    font-family: var(--font-text);
+    font-size: 1.05em;
+    line-height: 1.65;
+}
+
+.theme-dark .markdown-source-view .cm-line {
+    font-family: var(--font-text);
+    line-height: 1.65;
+}
+
+
+/* ============================================================
+   LISTS
+   ============================================================ */
+
+.theme-dark .markdown-preview-view ul,
+.theme-dark .markdown-preview-view ol {
+    font-family: var(--font-text);
+    line-height: 1.6;
+}
+
+.theme-dark .markdown-preview-view li::marker {
+    color: var(--cog-brass);
+}
+
+
+/* ============================================================
+   EMPHASIS
+   ============================================================ */
+
+.theme-dark .markdown-preview-view strong {
+    color: var(--cog-brass);
+    font-weight: 600;
+}
+
+.theme-dark .markdown-preview-view em {
+    color: var(--cog-text-muted);
+}
+
+
+/* ============================================================
+   CALLOUTS
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Shared structure
+   ------------------------------------------------------------ */
+
+.theme-dark .callout[data-callout] {
+    background: var(--cog-bg-2);
+
+    border: 1px solid var(--cog-border-bright);
+    border-radius: 0;
+
+    margin: 1.5em 0;
+    padding: 0;
+
+    --callout-icon: none;
+}
+
+.theme-dark .callout[data-callout] .callout-title {
+    background: var(--cog-bg-3);
+    border-bottom: 1px solid var(--cog-border);
+
+    padding: 0.55em 0.8em;
+
+    font-family: var(--font-interface);
+    font-size: 0.85em;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.theme-dark .callout[data-callout] .callout-icon {
+    display: none;
+}
+
+.theme-dark .callout[data-callout] .callout-title-inner::before {
+    content: "[ ";
+    color: var(--cog-red);
+}
+
+.theme-dark .callout[data-callout] .callout-title-inner::after {
+    content: " ]";
+    color: var(--cog-red);
+}
+
+.theme-dark .callout[data-callout] .callout-content {
+    padding: 0.8em 1em;
+
+    font-family: var(--font-interface);
+    color: var(--cog-text);
+}
+
+.theme-dark .callout[data-callout] .callout-content p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   DATA
+   Uses Obsidian "info" callout
+   ------------------------------------------------------------ */
+
+.theme-dark .callout[data-callout="info"] {
+    --callout-color: 168, 138, 82;
+
+    border-left: 3px solid var(--cog-brass);
+}
+
+.theme-dark .callout[data-callout="info"] .callout-title {
+    color: var(--cog-brass);
+}
+
+
+/* ------------------------------------------------------------
+   SYSTEM
+   Uses Obsidian "success" callout
+   ------------------------------------------------------------ */
+
+.theme-dark .callout[data-callout="success"] {
+    --callout-color: 113, 139, 98;
+
+    border-left: 3px solid var(--cog-green);
+}
+
+.theme-dark .callout[data-callout="success"] .callout-title {
+    color: var(--cog-green);
+}
+
+
+/* ------------------------------------------------------------
+   ARCHIVE
+   Uses Obsidian "abstract" callout
+   ------------------------------------------------------------ */
+
+.theme-dark .callout[data-callout="abstract"] {
+    --callout-color: 117, 97, 59;
+
+    border-left: 3px solid var(--cog-brass-dark);
+}
+
+.theme-dark .callout[data-callout="abstract"] .callout-title {
+    color: var(--cog-brass-dark);
+}
+
+
+/* ------------------------------------------------------------
+   WARNING
+   Uses Obsidian "warning" callout
+   ------------------------------------------------------------ */
+
+.theme-dark .callout[data-callout="warning"] {
+    --callout-color: 197, 139, 50;
+
+    border-left: 3px solid var(--cog-amber);
+}
+
+.theme-dark .callout[data-callout="warning"] .callout-title {
+    color: var(--cog-amber);
+}
+
+
+/* ------------------------------------------------------------
+   ERROR
+   Uses Obsidian "failure" callout
+   ------------------------------------------------------------ */
+
+.theme-dark .callout[data-callout="failure"] {
+    --callout-color: 143, 33, 28;
+
+    border-left: 3px solid var(--cog-red-bright);
+}
+
+.theme-dark .callout[data-callout="failure"] .callout-title {
+    color: var(--cog-red-bright);
+}
+
+
+/* ------------------------------------------------------------
+   Callout typography — Reading View
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-preview-view .callout .callout-content,
+.theme-dark .markdown-preview-view .callout .callout-content p {
+    font-family: var(--font-interface);
+}
+
+
+/* ============================================================
+   PROPERTIES
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Base container
+   ------------------------------------------------------------ */
+
+.theme-dark .metadata-container {
+    background: var(--cog-bg-2);
+
+    border: 1px solid var(--cog-border-bright);
+    border-radius: 0;
+
+    margin: 1.5em 0;
+}
+
+
+/* ------------------------------------------------------------
+   Header
+   ------------------------------------------------------------ */
+
+.theme-dark .metadata-properties-heading {
+    background: var(--cog-bg-3);
+    border-bottom: 1px solid var(--cog-border);
+
+    padding: 0.55em 0.8em;
+
+    font-family: var(--font-interface);
+    font-size: 0.85em;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    color: var(--cog-brass);
+}
+
+.theme-dark .metadata-properties-heading .collapse-indicator {
+    display: none;
+}
+
+
+/* ------------------------------------------------------------
+   Content
+   ------------------------------------------------------------ */
+
+.theme-dark .metadata-content {
+    padding: 0.65em 0.8em;
+}
+
+
+/* ------------------------------------------------------------
+   Rows
+   ------------------------------------------------------------ */
+
+.theme-dark .metadata-property {
+    font-family: var(--font-interface);
+
+    border-bottom: 1px solid var(--cog-border);
+
+    padding: 0.35em 0;
+}
+
+.theme-dark .metadata-property:last-child {
+    border-bottom: none;
+}
+
+
+/* Property key */
+
+.theme-dark .metadata-property-key {
+    color: var(--cog-brass-dark);
+
+    font-family: var(--font-interface);
+    font-size: 0.85em;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+/* Property value */
+
+.theme-dark .metadata-property-value {
+    color: var(--cog-text);
+    font-family: var(--font-interface);
+}
+
+
+/* ------------------------------------------------------------
+   Add property
+   ------------------------------------------------------------ */
+
+.theme-dark .metadata-add-button {
+    margin-top: 0.55em;
+
+    padding: 0.4em 0.7em;
+
+    font-family: var(--font-interface);
+    font-size: 0.8em;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    color: var(--cog-brass);
+
+    border: 1px solid var(--cog-border);
+    border-radius: 0;
+
+    background: var(--cog-bg-1);
+
+    transition:
+        color 120ms ease,
+        background 120ms ease,
+        border-color 120ms ease;
+}
+
+.theme-dark .metadata-add-button:hover {
+    color: var(--cog-amber);
+
+    background: var(--cog-bg-3);
+
+    border-color: var(--cog-border-bright);
+}
+
+.theme-dark .metadata-add-button .text-button-icon {
+    color: var(--cog-red);
+}
+
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Base container
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-rendered .table-wrapper,
+.theme-dark .markdown-rendered .el-table {
+    margin: 1.5em 0;
+
+    border: 1px solid var(--cog-border-bright);
+    background: var(--cog-bg-2);
+
+    overflow-x: auto;
+}
+
+
+/* ------------------------------------------------------------
+   Table
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-rendered table {
+    width: 100%;
+    margin: 0;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    font-family: var(--font-interface);
+    font-size: 0.9em;
+}
+
+
+/* ------------------------------------------------------------
+   Header
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-rendered table thead th {
+    position: relative;
+
+    background: var(--cog-bg-3);
+    color: var(--cog-metal-bright);
+
+    font-family: var(--font-interface);
+    font-size: 0.85em;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    text-align: left;
+
+    border-bottom: 2px solid var(--cog-border-bright);
+}
+
+
+/* Small terminal-like marker */
+
+.theme-dark .markdown-rendered table thead th:first-child::before {
+    content: "▸ ";
+    color: var(--cog-brass);
+}
+
+
+/* ------------------------------------------------------------
+   Cells
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-rendered table th,
+.theme-dark .markdown-rendered table td {
+    padding: 0.55em 0.8em;
+
+    border-right: 1px solid var(--cog-border);
+    border-bottom: 1px solid var(--cog-border);
+}
+
+.theme-dark .markdown-rendered table th:last-child,
+.theme-dark .markdown-rendered table td:last-child {
+    border-right: none;
+}
+
+.theme-dark .markdown-rendered table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ------------------------------------------------------------
+   Body
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-rendered table tbody td {
+    color: var(--cog-text);
+}
+
+
+/* ------------------------------------------------------------
+   Row interaction
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-rendered table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.theme-dark .markdown-rendered table tbody tr:hover {
+    background: var(--cog-bg-3);
+}
+
+
+/* ------------------------------------------------------------
+   Data cells
+   ------------------------------------------------------------ */
+
+.theme-dark .markdown-rendered table td {
+    font-family: var(--font-interface);
+    font-variant-numeric: tabular-nums;
+}
